@@ -1,0 +1,48 @@
+
+body{
+    margin-top: 50px
+}
+
+footer{
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.img_topo{
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.divslider{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.nav-pills{
+    padding-top: 4px;
+}
+
+/*.nome_topo_multimagem{
+    border-style: none;
+    pointer-events: none;
+}*/
+
+.contato textarea{
+    height: 170px;
+    margin-bottom: 10px;
+}
+
+.contato .aviso{
+    padding: 20px;
+}
+
+.topo_agenda_exame{
+    margin-bottom: 20px;
+}
+.topo_agenda_exame p{
+    margin-top: 5px;
+    margin-left: 55px;
+}
+.topo_localizacao p{
+    margin-top: 15px;
+}

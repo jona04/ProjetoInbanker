@@ -11,11 +11,14 @@ if(isset($_POST['usu_id_face']) && ($_POST["usu_id_face"] != "")) {
 
   $usu_id_face = ($_POST['usu_id_face']);
 
-
   //$res = $con->query('SELECT COUNT(*) FROM usuarios WHERE usu_id_face ='.$usu_id_face);
   //$res = $res -> rowCount();
   //if($res == 0){
 
+  $res = $con->query('SELECT usu_nome FROM usuarios WHERE usu_id_face ='.$usu_id_face);
+  $usu_nome = $res->fetchColumn();
+
+  if($usu_nome == ""){
     $usu_nome = ($_POST['usu_nome']);
     $usu_token = ($_POST['usu_token']);
     $usu_img = ($_POST['usu_img']);
@@ -33,7 +36,9 @@ if(isset($_POST['usu_id_face']) && ($_POST["usu_id_face"] != "")) {
 
     echo 'bagulho adicionado';
 
-  //}
+  }else{
+    echo 'bagulho ja foi adicionado ---- ok';
+  }
   
 }
 

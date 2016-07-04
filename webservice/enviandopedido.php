@@ -15,8 +15,9 @@ if(isset($_POST['id_user_logado']) && ($_POST["id_user_logado"] != "")) {
 
   $trans_dias = ($_POST['dias']);
 
-  $data_vencimento = strtotime($_POST['data']);
-  $data_vencimento = date('Y-m-d',$data_vencimento);
+  $data_vencimento = $_POST['data'];
+  //$data_vencimento = strtotime($_POST['data']);
+  //$data_vencimento = date('Y-m-d',$data_vencimento);
 
   $valor = ($_POST['valor']);
 

@@ -47,9 +47,9 @@ if(isset($_POST['gcm_push']) && $_POST['gcm_push'] == 'gcm_push_resposta'){
     	$o_json = json_encode($lista_transacoes);
 
     	if($resposta == '1'){
-			$pushMessage = "Seu pedido de emprestimo foi recusado pelo ".$lista_transacoes['trans_nome_user2'];
+			$pushMessage = "Seu pedido de emprestimo foi rejeitado pelo ".$lista_transacoes['trans_nome_user2'];
 		}else if ($resposta == '2'){
-			$pushMessage = "Seu pedido de emprestimo foi aceito pelo ".$lista_transacoes['trans_nome_user2'];
+			$pushMessage = "Confirme o recebimento do valor solicitado a ".$lista_transacoes['trans_nome_user2'];
 		}
 
 		//$gcmRegIds = "dGqt4m0S4eI:APA91bH2oCEXxrgVttMfq1i6AbbRNSqu8Gbsgb7ARkC1-S_VwSsI6Bbqd2HCk3x0ea-O-VaF0J47MgO8nVkm5li-mUBC7iV0ARrpzkIuseTlvFES0SPCsQnT1cSJ_hslrEKJ9-xNSVIG";

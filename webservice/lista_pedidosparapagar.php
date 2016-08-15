@@ -6,7 +6,8 @@ if(isset($_POST['user_id']) && $_POST['user_id'] != ''){
 
 	$user_id = $_POST['user_id'];
 
-	$rs_trans = $con->query("SELECT * FROM transacoes WHERE trans_id_user1 = '$user_id' AND trans_recebimento_empre= 0 AND trans_resposta_pedido != 1");
+	$rs_trans = $con->query("SELECT * FROM transacoes WHERE (trans_id_user1 ='$user_id' AND trans_resposta_pedido = 2) AND trans_resposta_pagamento != 3
+		AND trans_recebimento_empre != 0");
 
 	$lista_transacoes = array();
 	while($row_trans = $rs_trans->fetch(PDO::FETCH_OBJ)){   
@@ -24,6 +25,7 @@ if(isset($_POST['user_id']) && $_POST['user_id'] != ''){
 			'trans_resposta_pedido' => $row_trans->trans_resposta_pedido,
 			'trans_resposta_pagamento' => $row_trans->trans_resposta_pagamento,
 			'trans_recebimento_empre' => $row_trans->trans_recebimento_empre,
+			'trans_data_finalizada' => $row_trans->trans_data_finalizada,
 		);
     }
     if(sizeof($lista_transacoes) > 0){
@@ -32,31 +34,6 @@ if(isset($_POST['user_id']) && $_POST['user_id'] != ''){
 	}else{
 		echo "menor";
 	}
-    //echo sizeof($id_trans);
-    /*if(sizeof($id_user1) > 0){
-    	//echo "ok";
-
-    	$lista_amigos = array();
-    	for($i = 0;$i < sizeof($id_user2); $i++){
-
-    		$rs_amigos = $con->query("SELECT usu_id_face,usu_nome,usu_imagem FROM usuarios WHERE usu_id_face =".$id_user2[$i]);
-			$result = $rs_amigos->fetch(PDO::FETCH_ASSOC);
-			
-			$lista_amigos[] = array(
-				'usu_id_face' => $result['usu_id_face'],
-				'usu_nome' => $result['usu_nome'],
-				'usu_imagem' => $result['usu_imagem'],
-			);
-
-    	}
-    	
-
-    	//$amigos = array("lista" => $lista_amigos);
-		echo $o_json = json_encode($lista_amigos);
-
-    }else{
-    	echo "menor";
-    }*/
 	
 
 }

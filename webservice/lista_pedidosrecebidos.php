@@ -6,7 +6,7 @@ if(isset($_POST['user_id']) && $_POST['user_id'] != ''){
 
 	$user_id = $_POST['user_id'];
 
-	$rs_trans = $con->query("SELECT * FROM transacoes WHERE trans_id_user2 =".$user_id);
+	$rs_trans = $con->query("SELECT * FROM transacoes WHERE trans_id_user2 ='$user_id' AND trans_resposta_pagamento != 3 AND trans_resposta_pedido != 1");
 
 	$lista_transacoes = array();
 	while($row_trans = $rs_trans->fetch(PDO::FETCH_OBJ)){   
